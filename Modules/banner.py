@@ -1,12 +1,10 @@
-import socket
-
-def grab_banner(host, port):
-    try:
-        s = socket.socket()
-        s.settimeout(1)
-        s.connect((host, port))
-        banner = s.recv(1024).decode(errors="ignore")
-        return banner.strip()
-    except:
-        return None
+def banner():
+    RED = "\33[91m"
+    text = f"""
+            {RED}        
+            _               __                       
+            |_) _  ._ _|_   (_   _  _. ._  ._   _  ._ 
+            |  (_) |   |_   __) (_ (_| | | | | (/_ |                                      
+            """
     
+    print(text + "\n\n")

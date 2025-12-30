@@ -1,9 +1,9 @@
 from modules.tcp_scanner import scan_tcp_port
 from modules.udp_scanner import scan_udp
 from modules.service import detect_service
-from modules.banner import grab_banner
+from modules.banner_grabber import grab_banner
 from modules.vulnerability_check import vulnerability_check
-
+from modules.banner import banner
 def scan(host,ports,scan_type):
 
     if not ports:
@@ -40,6 +40,7 @@ def scan(host,ports,scan_type):
             print(f"Service: {service} \n Banner:{banner if banner else 'no banner found'} \n Vulnerabilities: {vulns if vulns else 'No vulnerabilities detected'}")
 
 
+banner()
 
 host = input("Enter the host address: ")
 ports = input("enter port range: ")
