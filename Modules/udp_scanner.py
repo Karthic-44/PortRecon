@@ -1,15 +1,15 @@
 import socket 
 
-def scan_udp(host, port, timeout=1):
-    try:
-        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.settimeout(timeout)
-        s.sendto(b"", (host, port))
+def scan_udp(host, ports, timeout=1):
 
+    open_ports = []
+    for port in ports:
         try:
-            data, addr = s.recvfrom(1024)
-            return port
-        except socket.timeout:
-            return None
-    except:
-        return None
+            with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s: 
+                s.settimeout(timeout)
+                s.sendto(b"", (host, port))
+                data, addr = s.recvfrom(1024)
+                open_ports.append(port)
+        except :
+            pass
+    return open_ports
