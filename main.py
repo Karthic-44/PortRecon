@@ -42,14 +42,19 @@ def scan(host,ports,scan_type):
 
 banner()
 
-host = input("Enter the host address: ")
-ports = input("enter port range: ")
-scan_type = input("enter type of scan (tcp or udp): ")
+host = input("Enter the host address: ").replace("https://", "").replace("http://", "").rstrip("/")
 
+ports = input("enter port range: ")
 if '-' in ports:
     start_port, end_port = map(int, ports.split('-'))
     ports = range(start_port, end_port + 1)
 else:
     ports = [int(ports)]
+
+scan_type = input("enter type of scan (tcp or udp): ").strip().lower()
+while scan_type not in ("tcp","udp"):
+    scan_type = input("invalid type please enter again: ").strip().lower()
+
+
 
 scan(host,ports,scan_type)
