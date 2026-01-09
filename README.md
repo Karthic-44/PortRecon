@@ -5,6 +5,10 @@ This project focuses on safe, legal, educational, and defensive use-cases only.
 
 This project consists of a tcp and udp port scanner, a service and banner detector. It also consists of a simple vulnerability checker.
 
+# Screenshot
+
+<img width="814" height="575" alt="image" src="https://github.com/user-attachments/assets/17f3e9d0-e1b3-4774-a811-8f864d91d64e" />
+
 # Legal Disclaimer
 
 The use of code contained in this repository, either in part or in its totality, 
