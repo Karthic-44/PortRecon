@@ -1,9 +1,9 @@
-from modules.tcp_scanner import scan_tcp_port
-from modules.udp_scanner import scan_udp
-from modules.service import detect_service
-from modules.banner_grabber import grab_banner
-from modules.vulnerability_check import vulnerability_check
-from modules.banner import banner
+from Modules.tcp_scanner import scan_tcp_port
+from Modules.udp_scanner import scan_udp
+from Modules.service import detect_service
+from Modules.banner_grabber import grab_banner
+from Modules.vulnerability_check import vulnerability_check
+from Modules.banner import banner
 def scan(host,ports,scan_type):
 
     if not ports:
